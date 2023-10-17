@@ -44,7 +44,7 @@ function App() {
         <Character
           key={character.id}
           name={character.name}
-          planet={planets.find(planet => planet.id === character.homeworld).name}
+          homeWorld={planets.find(planet => planet.id === character.homeworld).name}
         />
       ))}
       {/* ❗ Map over the data in state, rendering a Character at each iteration */}

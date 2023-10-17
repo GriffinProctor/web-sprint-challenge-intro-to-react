@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 
-function Character({ name, planet }) { // ❗ Add the props
-  const [showPlanet, setShowPlanet] = useState(false)
-  const togglePlanet = () => {
-    setShowPlanet(!showPlanet)
+function Character({ name, homeWorld }) { // ❗ Add the props
+  const [showHomeWorld, setShowHomeWorld] = useState(false)
+  const toggle = () => {
+    setShowHomeWorld(!showHomeWorld)
   }
   // ❗ Create a state to hold whether the homeworld is rendering or not
   // ❗ Create a "toggle" click handler to show or remove the homeworld
   return (
-    <div className='character-card'>
-      <h3 onClick={togglePlanet} className='character-name'>{name}</h3>
+    <div onClick={toggle} className='character-card'>
+      <h3 className='character-name'>{name}</h3>
 
-      {showPlanet && (
+      {showHomeWorld && (
 
         <p>{"Planet: "}
-          <span className='character-planet'>{planet}</span>
+          <span className='character-planet'>{homeWorld}</span>
         </p>
 
       )}
